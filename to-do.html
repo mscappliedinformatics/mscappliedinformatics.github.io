@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>UoM To-Do List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="to-do.css">
+        <script src="to-do.js" defer></script>
+    </head>
+    <body>
+        <input id="currentTab" type="radio" name="nav" checked>
+        <input id="completedTab" type="radio" name="nav">
+        <input id="newOrEditTab" type="radio" name="nav">
+        <header>
+            <h1><img src="assets/logo.svg" alt="Logo">UoM To-Do List</h1>
+            <nav>
+                <label for="currentTab">Τρέχοντα</label>
+                <label for="completedTab">Ολοκληρωμένα</label>
+                <label for="newOrEditTab">Νέο</label>
+            </nav>
+        </header>
+<!-- Three sub-contents related to 3 tabs-->
+        <main>
+            <ul id="currentItems">
+                <!-- Modal Dialog-->
+                <li id="currentItemsDialog" class="modal">
+                    <div>
+                        <div id="moveUp"><img src="assets/upArrow.svg">Μετακίνηση επάνω</div>
+                        <div id="moveDown"><img src="assets/downArrow.svg">Μετακίνηση κάτω</div>
+                        <div id="edit"><img src="assets/edit.svg">Επεξεργασία</div>
+                        <div id="complete"><img src="assets/complete.svg">Ολοκλήρωση</div>
+                        <div><img src="assets/close.svg">Ακύρωση</div>
+                    </div>
+                </li>
+            </ul>
+            <ul id="completedItems">
+                <!-- Modal Dialog-->
+                <li id="completedItemsDialog" class="modal">
+                    <div>
+                        <div id="reactivate"><img src="assets/reactivate.svg">Και πάλι ενεργό</div>
+                        <div id="delete"><img src="assets/delete.svg">Οριστική διαγραφή</div>
+                        <div><img src="assets/close.svg">Ακύρωση</div>
+                    </div>
+                </li>
+            </ul>
+            <ul id="newOrEdit">
+                <li>
+                    <textarea placeholder="Περιγραφή αντικειμένου"></textarea>
+                    <div id="ok" class="button"><img src="assets/complete.svg">OK</div>
+                    <div id="cancel" class="button"><img src="assets/close.svg">Άκυρο</div>
+                </li>
+            </ul>
+        </main>
+        <script>
+            // Hidden click for some initial values
+            document.querySelector('header img').addEventListener('click', function () {
+                document.getElementById('currentItems').insertAdjacentHTML('afterbegin', '<li>Ραντεβού με το Γιώργο</li><li>Γυμναστήριο</li><li>Service το αμάξι</li>');
+                document.getElementById('completedItems').insertAdjacentHTML('afterbegin', '<li>Τηλέφωνο στη Μαρία</li><li>Καφές με το Γιώργο</li><li>Ψώνια από τη λαϊκή</li>');
+            });
+        </script>
+    </body>
+</html>

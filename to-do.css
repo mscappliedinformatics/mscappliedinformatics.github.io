@@ -1,0 +1,172 @@
+@font-face {
+    font-family: myFont;
+    src: url("assets/SourceSansPro.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(250,250,250);
+    color: rgb(80,80,80);
+    font-family: myFont, sans-serif;
+    padding-top: 95px; /* accomodate fixed header */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 95px;
+    max-width: inherit;
+    background-color: inherit;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 5px 0;
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+input {
+    display: none;
+}
+
+nav, li, .modal > div > div, .button {
+    border: 2px solid rgb(80,80,80);
+    border-radius: 5px;
+}
+
+textarea, li, label, .modal > div > div, .button {
+    font-size: 1.6rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 5px;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+    padding: 5px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+label[for="completedTab"] {
+    border: solid rgb(150,150,150);
+    border-width: 0 1px;
+}
+
+input[id="currentTab"]:checked ~ header label[for="currentTab"],
+input[id="completedTab"]:checked ~ header label[for="completedTab"],
+input[id="newOrEditTab"]:checked ~ header label[for="newOrEditTab"] {
+    background-color: rgb(40, 140, 255);
+    color: rgb(250,250,250);
+}
+
+main {
+    margin: 10px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: none;
+}
+
+input[id="currentTab"]:checked ~ main ul[id="currentItems"],
+input[id="completedTab"]:checked ~ main ul[id="completedItems"],
+input[id="newOrEditTab"]:checked ~ main ul[id="newOrEdit"] {
+    display: block;
+}
+
+li:not(.modal) {
+    margin-top: 10px;
+    padding: 15px;
+    overflow: auto;
+}
+
+ul:not(#newOrEdit) li {
+    cursor: pointer;
+}
+
+#completedItems li:not(.modal) {
+    background-color: rgb(255, 130, 130);
+    color: black;
+    text-decoration: line-through;
+}
+
+li[data-selected], #completedItems li[data-selected] {
+    background-color:  rgb(200,200,200);
+}
+
+li[data-selected] ~ .modal {
+    display: block;
+}
+
+#currentItems li[data-selected]:first-child ~ .modal #moveUp,
+#currentItems li[data-selected]:nth-last-child(2) ~ .modal #moveDown {
+    display: none;
+}
+
+textarea {
+    display: block;
+    margin: 10px auto;
+    width: 95%;
+    height: 75px;
+    font-family: myFont;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    background-color: rgba(80,80,80,0.5);
+    display: none;
+}
+
+.modal > div {
+    width: 290px;
+    margin: 10px auto 0 auto;
+    padding: 5px;
+    border: 1px solid rgb(150,150,150);
+    border-radius: 5px;
+    background-color: rgb(250,250,250);
+}
+
+.modal > div > div, .button {
+    margin: 10px auto;
+    padding: 3px;
+    max-width: 230px;
+    background-color: rgb(230,230,230);
+}
+
+.modal > div > div:hover, .button:hover {
+    cursor: pointer;
+    background-color: rgb(200,200,200);
+}
+
+.button img {
+    margin-left: 5px;
+}
