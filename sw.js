@@ -5,6 +5,7 @@ self.addEventListener('install', function (event) {
                 '/to-do.html',
                 '/to-do.css',
                 '/to-do.js',
+                '/favicon.ico',
                 '/assets/close.svg',
                 '/assets/complete.svg',
                 '/assets/delete.svg',
