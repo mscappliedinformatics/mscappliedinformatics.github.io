@@ -3,13 +3,13 @@
   "name": "UoM To-Do List",
   "icons": [
     {
-      "src": "/assets/icon.svg",
-      "type": "image/svg+xml",
+      "src": "/assets/192.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/assets/icon.svg",
-      "type": "image/svg+xml",
+      "src": "/assets/512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
