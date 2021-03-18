@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/",
   "background_color": "white",
   "display": "standalone",
   "description": "Example of a minimal to-do list"
