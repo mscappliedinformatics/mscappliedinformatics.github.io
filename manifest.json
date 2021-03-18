@@ -1,0 +1,20 @@
+{
+  "short_name": "UoM To-Do",
+  "name": "UoM To-Do List",
+  "icons": [
+    {
+      "src": "/assets/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "white",
+  "display": "standalone",
+  "description": "Example of a minimal to-do list"
+}
