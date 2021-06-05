@@ -8,4 +8,35 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// Handle A2HS
+let deferredPrompt;
+const installBtn = document.getElementById('install');
+// Wait to check if App follows the A2HS criteria
+installBtn.style.display = 'none';
+
+window.addEventListener('beforeinstallprompt', function (ev) {
+    // Prevent some (older?) browsers from popping the install prompt
+    ev.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = ev;
+    // Update UI to notify the user they can add to home screen
+    installBtn.style.display = 'block';
+
+    installBtn.addEventListener('click', function () {
+        // Don't need it any more
+        installBtn.style.display = 'none';
+        // Show the prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then(function (choiceResult) {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+        deferredPrompt = null;
+        });
+    });
+});
+
 var myApp = {};
