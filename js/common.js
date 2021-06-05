@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 let deferredPrompt;
 const installBtn = document.getElementById('install');
 // Wait to check if App follows the A2HS criteria
-installBtn.style.display = 'none';
+installBtn.style.visibility = 'hidden';
 
 window.addEventListener('beforeinstallprompt', function (ev) {
     // Prevent some (older?) browsers from popping the install prompt
@@ -20,11 +20,11 @@ window.addEventListener('beforeinstallprompt', function (ev) {
     // Stash the event so it can be triggered later.
     deferredPrompt = ev;
     // Update UI to notify the user they can add to home screen
-    installBtn.style.display = 'block';
+    installBtn.style.visibility = 'visible';
 
     installBtn.addEventListener('click', function () {
         // Don't need it any more
-        installBtn.style.display = 'none';
+        installBtn.style.visibility = 'hidden';
         // Show the prompt
         deferredPrompt.prompt();
         // Wait for the user to respond to the prompt
